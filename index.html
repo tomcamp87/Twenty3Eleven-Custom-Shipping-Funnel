@@ -41,6 +41,8 @@
 
   <!-- Preconnect to third-party form host so iframe TLS handshake starts immediately -->
   <link rel="preconnect" href="https://api.leadconnectorhq.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="preconnect" href="https://link.msgsndr.com" crossorigin>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -277,7 +279,10 @@
 
     <!-- Full-bleed hero photo -->
     <div class="absolute inset-0">
-      <img src="images/hero.png" alt="Plywood shipping crate with stenciled handling instructions in a fabrication shop" width="1672" height="941" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover">
+      <picture>
+        <source type="image/webp" srcset="images/hero.webp">
+        <img src="images/hero.png" alt="Plywood shipping crate with stenciled handling instructions in a fabrication shop" width="1672" height="941" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover" decoding="async">
+      </picture>
       <!-- Gradient overlay: darker on the left where the H1 sits, lighter on the right so the image remains visible behind the form -->
       <div class="absolute inset-0" style="background: linear-gradient(100deg, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.55) 55%, rgba(10,10,10,0.45) 100%);"></div>
       <!-- Vertical fade so the transparent header is still legible at the top -->
@@ -452,7 +457,10 @@
       <!-- CUSTOM WOOD CRATES -->
       <div id="tab-crates" role="tabpanel" class="tab-panel grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         <div class="aspect-[4/3] lg:col-span-7 rounded-xl overflow-hidden bg-ink-2 shadow-card">
-          <img src="images/crates.png" alt="Bolted plywood shipping crate with stenciled routing instructions" width="1448" height="1086" loading="lazy" class="w-full h-full object-cover">
+          <picture>
+            <source type="image/webp" srcset="images/crates.webp">
+            <img src="images/crates.png" alt="Bolted plywood shipping crate with stenciled routing instructions" width="1448" height="1086" loading="lazy" class="w-full h-full object-cover" decoding="async">
+          </picture>
         </div>
         <div class="lg:col-span-5">
           <p class="eyebrow text-copper mb-3">01 · Custom Wood Crates</p>
@@ -470,7 +478,10 @@
       <!-- CRATE-AND-SHIP SERVICE -->
       <div id="tab-kit" role="tabpanel" class="tab-panel hidden grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         <div class="aspect-[4/3] lg:col-span-7 rounded-xl overflow-hidden bg-ink-2 shadow-card">
-          <img src="images/service.png" alt="Twenty3Eleven crew packing custom crates at a trade show booth" width="1448" height="1086" loading="lazy" class="w-full h-full object-cover">
+          <picture>
+            <source type="image/webp" srcset="images/service.webp">
+            <img src="images/service.png" alt="Twenty3Eleven crew packing custom crates at a trade show booth" width="1448" height="1086" loading="lazy" class="w-full h-full object-cover" decoding="async">
+          </picture>
         </div>
         <div class="lg:col-span-5">
           <p class="eyebrow text-copper mb-3">02 · Crate-and-Ship Service</p>
