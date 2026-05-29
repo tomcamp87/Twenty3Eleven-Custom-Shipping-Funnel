@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--
+  Twenty3Eleven Co. — Thank You Page
+  Companion to index.html. Loaded after the GHL form submits.
+
+  Google Ads conversion: uncomment the gtag block in <head> and paste real IDs.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Thanks — Twenty3Eleven Co.</title>
+  <meta name="description" content="Thanks for your quote request. We'll be in touch shortly.">
+  <meta name="theme-color" content="#B87333">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            copper:       '#B87333',
+            'copper-dark':'#8B5A29',
+            'copper-light':'#D89968',
+            ink:          '#0A0A0A',
+            'ink-2':      '#1A1A1A',
+            bone:         '#F5EBE0',
+            muted:        '#6B7280',
+          },
+          fontFamily: {
+            display: ['Manrope', 'system-ui', 'sans-serif'],
+            sans:    ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    };
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    svg { width: 1em; height: 1em; flex-shrink: 0; vertical-align: middle; }
+    body { margin: 0; font-family: 'Inter', system-ui, sans-serif; color: #0A0A0A; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, .display { font-family: 'Manrope', system-ui, sans-serif; }
+    .eyebrow {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .btn-copper {
+      background: #B87333; color: white;
+      transition: all 0.2s ease;
+      box-shadow: 0 10px 25px -10px rgba(184,115,51,0.6);
+    }
+    .btn-copper:hover { background: #8B5A29; transform: translateY(-1px); box-shadow: 0 15px 30px -10px rgba(184,115,51,0.7); }
+    .ty-hero {
+      background:
+        radial-gradient(circle at 30% 40%, rgba(184,115,51,0.25), transparent 55%),
+        radial-gradient(circle at 70% 60%, rgba(184,115,51,0.12), transparent 55%),
+        linear-gradient(180deg, #1A1A1A 0%, #0A0A0A 100%);
+      position: relative;
+    }
+    .ty-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0 2px, transparent 2px 16px);
+      pointer-events: none;
+    }
+    .check-circle {
+      width: 96px; height: 96px;
+      border-radius: 9999px;
+      background: rgba(184,115,51,0.15);
+      border: 2px solid rgba(184,115,51,0.5);
+      display: inline-flex; align-items: center; justify-content: center;
+      animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+      box-shadow: 0 0 60px rgba(184,115,51,0.4);
+    }
+    .check-circle svg { width: 48px; height: 48px; color: #D89968; }
+    @keyframes scaleIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KWJ52RW2');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Conversion event push — fires generate_lead into dataLayer so GTM -->
+  <!-- can route it to GA4, Google Ads conversion, Meta Pixel, etc.       -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'generate_lead',
+      page_source: 'crates',
+      traffic_funnel: 'paid',
+      value: 1
+    });
+  </script>
+</head>
+
+<body class="bg-ink">
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWJ52RW2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- HEADER -->
+  <header class="absolute top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 h-20 flex items-center justify-between">
+      <a href="https://twenty3elevenco.com" class="flex items-center">
+        <span class="font-display text-xl sm:text-2xl font-extrabold tracking-tight text-white">
+          Twenty3Eleven<span class="text-copper">.</span>
+        </span>
+      </a>
+      <a href="tel:+14233807586"
+         class="inline-flex items-center gap-2 text-white hover:text-copper font-semibold text-sm sm:text-base transition-colors">
+        <svg class="text-copper" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+        <span class="hidden sm:inline">423-380-7586</span>
+        <span class="sm:hidden">Call</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO — confirmation only -->
+  <section class="ty-hero relative min-h-screen flex items-center overflow-hidden">
+    <div class="relative z-10 w-full max-w-2xl mx-auto px-5 sm:px-8 lg:px-12 py-20 text-center text-white">
+
+      <div class="mb-8 flex justify-center">
+        <div class="check-circle">
+          <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+      </div>
+
+      <p class="eyebrow text-copper mb-5">Thank you</p>
+
+      <h1 class="display text-5xl sm:text-6xl font-extrabold leading-[1.02] tracking-tight mb-6">
+        We got it.<br>
+        <span class="text-copper">We'll be in touch soon.</span>
+      </h1>
+
+      <p class="text-lg text-white/70 leading-relaxed mb-10 max-w-lg mx-auto">
+        Your quote request just hit our inbox. A team member will reach out shortly with pricing and availability.
+      </p>
+
+      <a href="https://twenty3elevenco.com"
+         class="btn-copper inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-bold text-base">
+        Back to main site
+        <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-ink text-white py-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 text-xs text-white/40 flex flex-col md:flex-row justify-between items-center gap-3">
+      <span>&copy; <span id="year"></span> Twenty3Eleven Co., LLC · All rights reserved.</span>
+      <div class="flex items-center gap-4">
+        <a href="https://twenty3elevenco.com/termsfeed/privacy-policy/" class="hover:text-copper transition-colors">Privacy Policy</a>
+        <span class="text-white/20">·</span>
+        <a href="https://twenty3elevenco.com/termsfeed/terms-and-conditions/" class="hover:text-copper transition-colors">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
