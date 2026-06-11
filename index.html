@@ -857,7 +857,7 @@
             <span class="display font-bold text-ink text-lg leading-snug">What does delivery include?</span>
             <svg class="faq-chevron w-5 h-5 text-copper flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
           </summary>
-          <p class="text-muted mt-4 leading-relaxed">Drop-off at your loading dock or venue access point in your confirmed window. Pickup is scheduled separately after the event. Both are baked into the all-in quote.</p>
+          <p class="text-muted mt-4 leading-relaxed">Drop-off at your loading dock or venue access point in your confirmed window. Pickup is scheduled separately after the event. Both are included in your quote upfront.</p>
         </details>
 
         <details class="bg-bone-light border border-bone rounded-xl px-6 py-5 transition-all">
@@ -1007,7 +1007,7 @@
 
     document.querySelectorAll('[data-track="phone_click"]').forEach(el => {
       el.addEventListener('click', () => {
-        trackEvent('phone_click', { location: el.dataset.location || 'unknown' });
+        trackEvent('phone_click', { location: el.dataset.location || 'unknown', page_source: 'crates' });
       });
     });
 
