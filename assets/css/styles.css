@@ -534,4 +534,6 @@ body.nav-open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-4
     radial-gradient(circle,transparent 36%,rgba(255,255,255,.09) 36.5%,transparent 38.5%)}
 .coachcta-media img{position:relative;z-index:2;max-height:540px;width:auto;object-fit:contain;
   filter:drop-shadow(0 24px 42px rgba(0,0,0,.4))}
-@media(max-width:1040px){.coachcta{grid-template-columns:1fr}.coachcta-text{order:2;padding-left:clamp(1.6rem,6vw,3rem)}.coachcta-media{min-height:420px}}
+.coachcta.reverse{grid-template-columns:1fr 1.55fr}
+.coachcta.reverse .coachcta-media::before{left:auto;right:0}
+@media(max-width:1040px){.coachcta,.coachcta.reverse{grid-template-columns:1fr}.coachcta-text{order:2;padding-left:clamp(1.6rem,6vw,3rem)}.coachcta-media{min-height:420px}}
