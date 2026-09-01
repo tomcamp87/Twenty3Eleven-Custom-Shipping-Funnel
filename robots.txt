@@ -1,4 +1,13 @@
+# STAGING BUILD
+# Crawling is intentionally allowed so search engines can SEE the
+# <meta name="robots" content="noindex, nofollow"> tag on every page.
+# Do not switch this to "Disallow: /" while staging: blocking the crawl
+# would prevent the noindex from being read, which can leave URLs indexed.
+#
+# At launch: remove the noindex meta tags from the HTML, then uncomment the
+# Sitemap line below.
+
 User-agent: *
 Allow: /
 
-Sitemap: https://asylumwiv.com/sitemap.xml
+# Sitemap: https://asylumwiv.com/sitemap.xml

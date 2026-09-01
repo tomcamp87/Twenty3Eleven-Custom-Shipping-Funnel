@@ -1,78 +1,119 @@
-# Asylum Wellness Collective, Website (Design v3)
+# Asylum Wellness Collective, Website
 
-Static, GitHub-ready reference build for the one-site hub on **asylumwiv.com**. Designed to be reviewed live, then rebuilt in Elementor. No build step, no dependencies. Open `index.html` in a browser, or push the `site/` folder to GitHub Pages.
+Static reference build for the one-site hub on **asylumwiv.com**. No build step, no dependencies, no framework. Open `index.html` in a browser, or push this folder to GitHub Pages.
 
-## What changed in v3 (redesign)
+Built to be reviewed live by the client, then rebuilt in WordPress/Elementor.
 
-A full visual redesign that "punches up" the brand to match the dark, premium, athletic reference the client liked, plus the supplementation feel of ways2well and the luxury polish of Aventura.
+---
 
-- **New palette and feel:** near-black blue base with an electric blue to cyan accent (was ember orange), glassmorphic cards, aurora glows, large uppercase Saira display type, scroll-reveal animations, animated stat counters, and a sticky blurred nav. The brand mark is recreated in CSS as a stylized tree-heart that echoes the clinic's neon sign.
-- **Video header on every page:** each hero uses a full-bleed looping `<video>` behind a dark gradient overlay, exactly as requested. A subtle placeholder (`assets/video/header.mp4`) ships so headers work immediately. Replace it with the client's "Asylum Idea.mp4" (see `assets/video/README.txt`).
-- **Real photography wired in:** curated and web-optimized from the four shoot folders (Evergreen, Clinic Shots, Product Shots, B-Roll Clinic/Lifting). Includes IV lounge, blood draws, the vials lineup, coaching/gym shots, and the neon tree-heart brand sign. All in `assets/img/`.
-- **Stronger SEO:** per-page titles and meta descriptions, canonical tags, Open Graph and Twitter cards, theme-color, descriptive alt text, lazy loading, and JSON-LD structured data on every page (MedicalBusiness org with the three LLCs as `sameAs`, plus BreadcrumbList, Service, and FAQPage schema where relevant). Updated `sitemap.xml` and `robots.txt`.
+## BEFORE YOU GO LIVE
 
-## Pages (13)
+Three things must be handled before this is a public, indexable site.
 
-| File | Purpose | Primary keyword targets |
-|---|---|---|
-| `index.html` | Umbrella home | iv therapy cherry hill nj, iv hydration, functional medicine |
-| `iv-therapy.html` | IV hub | iv drip near me, mobile iv therapy nj, hangover iv |
-| `iv-therapy-nad.html` | NAD+ | nad+ iv therapy, nad+ infusion |
-| `iv-therapy-injections.html` | Injections | b12 injections near me, glutathione iv |
-| `labs.html` | Lab testing | blood work, lab testing, hormone testing, full body checkup |
-| `coaching.html` | 1:1 coaching | health coach nj, nutrition coach, personal trainer |
-| `sports-performance.html` | SPR hub | sports recovery, cryotherapy, cold plunge, infrared sauna |
-| `sports-performance-acupuncture.html` | Acupuncture | acupuncture near me, acupuncture cherry hill nj |
-| `sports-performance-spinal-decompression.html` | Decompression | spinal decompression near me |
-| `supplements.html` | Natural Health | brand + GBP play |
-| `about.html` | Team & story | functional medicine near me, wellness center |
-| `resources.html` | Blog/content engine | content cluster landing |
-| `contact.html` | Booking | iv therapy nj, near-me conversions |
+1. **Remove the `noindex` tag.** Every page currently contains `<meta name="robots" content="noindex, nofollow">` so Google will not index the review build. Delete that line from all 14 HTML files when you are ready to launch.
+2. **Add the logo file.** Drop the Asylum wordmark SVG at `assets/img/asylum-logo-white.svg`. It is referenced but not included. Until it exists, the header falls back automatically (see "Logo behavior" below), so nothing looks broken.
+3. **Get a compliance pass on the copy.** Claims, testimonials, entity identification, lab/dosing language, and the discount pricing all need sign-off from the medical director before publication. See "Compliance notes".
 
-## The Asylum Method animation
+---
 
-The homepage includes an animated, auto-playing journey (`#aj` section): bloodwork reading, supplements and coaching, the medical sign-off, then health/energy/fitness meters maxing out. It plays on scroll, loops, has a Replay button, and respects `prefers-reduced-motion`. Styles live in the journey block at the end of `assets/css/styles.css`; the timeline is the last block of `assets/js/main.js`.
+## Pages (14)
+
+| Page | File |
+| --- | --- |
+| Home | `index.html` |
+| IV Therapy & Hydration | `iv-therapy.html` |
+| NAD+ Therapy | `iv-therapy-nad.html` |
+| Vitamin Injections | `iv-therapy-injections.html` |
+| Lab Testing | `labs.html` |
+| Coaching | `coaching.html` |
+| Massage Therapy | `massage.html` |
+| Sports & Recovery | `sports-performance.html` |
+| Acupuncture | `sports-performance-acupuncture.html` |
+| Chiropractic & Training | `sports-performance-spinal-decompression.html` |
+| Supplements | `supplements.html` |
+| About & Team | `about.html` |
+| Resources | `resources.html` |
+| Contact | `contact.html` |
 
 ## Structure
 
 ```
-site/
-  index.html ... contact.html      13 pages, flat (Elementor-friendly)
-  assets/css/styles.css            single design system, CSS variables (v3)
-  assets/js/main.js                nav, sticky nav, scroll reveal, count-up, journey
-  assets/img/                      curated, web-optimized real photography
-  assets/video/header.mp4          looping hero background (placeholder, swap in real)
-  sitemap.xml  robots.txt          SEO scaffolding
+/
+  *.html              14 pages
+  robots.txt
+  sitemap.xml
+  assets/
+    css/styles.css    entire design system, single file
+    js/main.js        nav, scroll reveal, counters, Asylum Method animation
+    img/              photography and graphics
+    video/            home page hero video
 ```
 
-## Design system (v3)
+## Design system
 
-Edit the variables at the top of `assets/css/styles.css` to retheme everything:
+Defined as CSS custom properties at the top of `assets/css/styles.css`.
 
-- `--bg` near-black blue base, `--bg-2` / `--surface` panels and cards
-- `--accent` electric blue (`#2E8BFF`), `--accent-2` cyan (`#3FE0FF`), `--grad` the blue-cyan gradient used on CTAs, links, and accents
-- `--text` / `--muted` / `--faint` text ramp
-- Fonts: Saira (wide athletic display, uppercase headings) + Inter (body), from Google Fonts
+**Colour roles.** Blue is the action colour for Wellness & IV. Amber is the action colour for Sports & Recovery. Gold is a detail accent used site-wide for labels, prices, rules, and markers, and never on a button. That separation is what keeps the gold reading as premium instead of noisy.
 
-## Placeholders to replace before launch
+- `--accent` `#2E8BFF` electric blue, `--accent-2` `#3FE0FF` cyan
+- `--warm` `#F2A33D` amber, the Sports & Recovery wing
+- `--gold` `#F2A33D` / `--gold-2` `#FFC978`, detail accent
 
-- **Header video:** swap `assets/video/header.mp4` for the client's real footage (same filename, no HTML changes).
-- **Team photos:** Tyler uses a real photo. Coach George, Dr. Nisar, and Colin show styled monogram tiles. Drop real portraits into `assets/img/` and swap the monogram markup on `about.html` (and confirm names/titles/credentials).
-- **Prices** on IV / injection / NAD+ / coaching pages: sample numbers, confirm with the partners.
-- **Contact form** is a non-sending demo. Wire to OptiMantra (Wellness & IV) / Jane App (SPR), or embed your scheduler.
-- **Map** on `contact.html` uses a Google Maps embed for the address. Swap for an API-keyed embed or your GBP map if preferred.
-- **Hours** on `contact.html` are placeholder (Mon to Fri 9 to 7, Sat 9 to 2).
-- **Domain:** canonical, Open Graph, and schema URLs use `https://asylumwiv.com`. Update if the live domain differs.
+**Wing theming.** Add `class="wing-sports"` to any `<main>`, `<header>`, or section and everything inside re-themes from blue to amber through token overrides. No duplicated rules. Used on the four Sports & Recovery pages and the Dr. Nisar panel on the home page.
 
-## Publish to GitHub Pages
+**Type.** Michroma for hero headlines, Saira for headings and UI, Inter for body, Chakra Petch for the logo wordmark. Loaded from Google Fonts.
 
-1. Create a repo, push the contents of `site/`.
-2. Repo Settings, Pages, deploy from branch, root.
-3. Or just `git clone` and open `index.html` locally to review.
+**House rule:** no em dashes anywhere in the copy.
 
-## Notes carried from strategy
+## Logo behavior
 
-- One site, three brand sections (Wellness & IV, Sports Performance & Recovery, Natural Health). 301 the other two domains in.
-- Footer states the three LLCs operate independently at one location.
-- Supplement pages carry the FDA disclaimer.
-- No em dashes anywhere, per house style.
+The header logo tries three sources in order, so it can never render as a broken image:
+
+1. `assets/img/asylum-logo-white.svg` (local, preferred)
+2. the Cloudways-hosted SVG (fallback)
+3. an on-brand CSS text wordmark, ASYLUM + Wellness & IV
+
+Add the local file and it is picked up automatically with no code changes.
+
+## Booking links
+
+- **Wellness & IV** (header button, IV, NAD+, injections, labs, coaching, home, about, resources, contact) points to **OptiMantra**.
+- **Sports & Recovery** (massage, acupuncture, chiropractic & training, sports hub) points to **Jane**.
+
+Both open in a new tab. To change either, find-and-replace the URL across the HTML files.
+
+## SEO
+
+Per-page titles, meta descriptions, canonicals, Open Graph and Twitter cards, descriptive alt text, and lazy loading. JSON-LD on every page: `MedicalBusiness` plus `BreadcrumbList`, with `Service` and `FAQPage` where relevant. `sitemap.xml` lists all 14 pages.
+
+## Accessibility and resilience
+
+- One `<h1>` per page, every image has alt text
+- A `<noscript>` block keeps all content visible if JavaScript fails; without it the scroll-reveal animations would leave the page blank
+- Responsive at 1040px, 780px, and 560px, with a slide-down mobile nav and inline dropdowns
+- `prefers-reduced-motion` is respected
+
+## Compliance notes
+
+The copy was written against a New Jersey compliance audit. Two rules to preserve when editing:
+
+- **Coaching may not be tied to labs.** The coach is a non-practitioner, so never state or imply that he reads, orders, or interprets bloodwork. Labs are "reviewed by our clinical team."
+- **No guaranteed outcomes.** No promised results or timelines, and no diagnose/treat/cure/prevent language. Use supportive framing such as "popular for" and "may help support."
+
+Coaching testimonials are permitted. Testimonials for medical services (IV, injections, NAD+, labs) need New Jersey procedure-disclosure language before they go back on the site.
+
+## Local preview
+
+No server required. Open `index.html` directly, or:
+
+```bash
+python3 -m http.server 8000
+```
+
+then visit `http://localhost:8000`.
+
+## Deploying to GitHub Pages
+
+1. Push this folder to a repository.
+2. Settings, Pages, deploy from branch, root.
+3. Add the custom domain if desired. Remember to remove the `noindex` tags first.
